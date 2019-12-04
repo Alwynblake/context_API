@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
+import React, {useContext} from 'react';
+import { SettingsContext } from '../settings/site-context.js';
 
-const Count = () => {
-
-  const [count, setCount] = useState(0);
+const  Count = (props) => {
+  const context = useContext(SettingsContext);
 
   const styles = {
     container: {
@@ -21,18 +21,14 @@ const Count = () => {
       textAlign: 'center',
       width: '5em',
     },
-    button: {
-      height: '3em',
-    },
   };
-
   return (
-      <div style={styles.container}>
-        <button style={styles.button} onClick={() => setCount(count-1)}> - </button>
-        <span style={styles.counter}>{count}</span>
-        <button style={styles.button} onClick={() => setCount(count+1)}> + </button>
-      </div>
-  );
+        <>
+      <span style={styles.counter}>
+            {context.counter}
+      </span>
+        </>
+  )
 };
 
 export default Count;
