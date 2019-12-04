@@ -15,7 +15,6 @@ const Decrement = (props) => {
         <>
           <section>
             <div>
-              <h2>Counter Context</h2>
               <button style={styles.button} onClick={() => context.decrement()}> -</button>
             </div>
           </section>
